@@ -99,3 +99,5 @@ genymotion
 
 - Simulando a aplicação com o expo (pode ser instalado no celular).
 
+Links interessantes:
+https://www.youtube.com/watch?v=OE-gilbYCDI&t=320s
