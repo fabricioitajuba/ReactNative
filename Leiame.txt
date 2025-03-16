@@ -1,0 +1,101 @@
+## Trabalhando com o React Native no VSCode
+
+- Instalar o NodeJS no computador
+
+- Criar uma conta no https://expo.dev/
+
+- Instalando o expo (cria um esqueleto da aplicação e permite criar aplicações para android e mac)
+
+$ deleted files in .expo folder
+$ npm -g uninstall expo-cli --save
+$ npm install -g expo-cli@latest
+
+
+# Criando um projeto:
+
+$ expo init HelloWorld
+
+escolha a primeira opção "blank"
+
+O arquivo App.js é o arquivo principal da aplicação
+
+
+# Compilando e executando o projeto:
+
+- Entre na pasta do programa e digite: npm start
+
+Será gerado um QRCode, com o Expo instalado no celular, leia o QRCode gerado com o aplicativo
+
+
+# Gerando .apk (arquivo de instalação do aplicativo no celular)
+
+- O ícone da aplicação deverá estar na pasta \assets
+
+# Instalando o eas (caso não esteja instalado):
+
+$ sudo npm install -g eas-cli
+
+- Acesse a conta no expo:
+
+$ eas login (irá pedir login e senha)
+
+- Configurando o projeto (deverá estar dentro da pasta no projeto):
+
+$ eas build:configure
+
+Será gerao o arquivo eas.json
+
+Edite o arquivo eas.json, apague todo o conteúdo e inclua as seguintes linhas:
+
+{
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "preview2": {
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      }
+    },
+    "preview3": {
+      "developmentClient": true
+    },
+    "preview4": {
+      "distribution": "internal"
+    },
+    "production": {}
+  }
+}
+
+- Gerando o arquivo apk:
+
+$ eas build -p android --profile preview
+
+
+- Para concertar problemas na compilação:
+
+$ npx expo-doctor
+$ npx expo install --fix
+
+- Para clean:
+
+$ expo r -c 
+
+
+Liks:
+
+🔗 Expo: https://expo.dev/login
+🔗 EAS (Expo Application Services): https://docs.expo.dev/build/setup/
+🔗 Configuração do eas.json: https://docs.expo.dev/build-reference...
+
+
+- Simuladores para android:
+
+genymotion
+
+- Instalar o Expo Go no genymotion
+
+- Simulando a aplicação com o expo (pode ser instalado no celular).
+
